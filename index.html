@@ -31,10 +31,11 @@
       const ctx = canvas.getContext('2d');
       
       // 이미지 파일들
-      const images = [];
-      for (let i = 10001; i <= 10100; i++) {
-        images.push(`https://raw.githubusercontent.com/wndud630/module1/main/${i}.jpg`);
-      }
+const images = [];
+for (let i = 10001; i <= 10100; i++) {
+  images.push(`https://raw.githubusercontent.com/builddweller/bvs1_image/main/Module_1/${i}.jpg`);
+}
+
 
       let currentIndex = Math.floor(images.length / 2); // 중간 이미지부터 시작
       let isDragging = false;
