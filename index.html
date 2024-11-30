@@ -42,11 +42,9 @@ for (let i = 10001; i <= 10100; i++) {
       let startX;
       const rotationFactor = 1; // 회전 속도 조절 인자
 
-	          // 캔버스 크기 설정
-      canvas.width = 1000;  // 너비 설정
-      canvas.height = 1000; // 높이 설정
 	    
-
+      // 원본 이미지의 비율을 계산할 변수
+      let imgWidth, imgHeight;
 
       // 이미지 로드
       const imgElements = [];
@@ -80,7 +78,15 @@ for (let i = 10001; i <= 10100; i++) {
         const windowWidth = window.innerWidth;
         const windowHeight = window.innerHeight;
         
-    
+        // 원본 이미지 비율에 맞게 크기 계산
+        const aspectRatio = imgWidth / imgHeight;
+        if (windowWidth / windowHeight > aspectRatio) {
+          canvas.width = windowHeight * aspectRatio;
+          canvas.height = windowHeight;
+        } else {
+          canvas.width = windowWidth;
+          canvas.height = windowWidth / aspectRatio;
+        }
       }
 
       // 마우스가 캔버스로 들어올 때 커서 이미지 변경
