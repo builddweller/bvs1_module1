@@ -69,9 +69,11 @@ for (let i = 10001; i <= 10100; i++) {
 
       // 이미지 그리기
       function drawImage() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.drawImage(imgElements[currentIndex], 0, 0, canvas.width, canvas.height);
-      }
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.imageSmoothingEnabled = true;
+  ctx.imageSmoothingQuality = 'high';
+  ctx.drawImage(imgElements[currentIndex], 0, 0, canvas.width, canvas.height);
+}
 
       // 창 크기 조정 시 캔버스 크기 조정 (비율 유지)
       function resizeCanvas() {
